@@ -1,22 +1,35 @@
 :root {
+  // Colors
+  --clr-primary-light: #8abdff;
+  --clr-primary: #6d5dfc;
+  --clr-primary-dark: #5b0eeb;
 
-    // Colors
-    --clr-primary: #171717;
-    --clr-secondary: #efefef;
-    --clr-accent: ...;
+  --clr-white: #ffffff;
+  --clr-black: #171717;
 
-    // Font family
-    --ff-primary: ...;
-    --ff-secondary: ...;
+  --clr-greyLight-1: #e4ebf5;
+  --clr-greyLight-2: #c8d0e7;
+  --clr-greyLight-3: #bec8e4;
+  --clr-greyDark: #9baacf;
 
-    // Font size
-    --fs-small: ...;
-    --fs-medium: ...;
-    --fs-large: ...;
-    --fs-largest: ...;
+  // Colour of text
+  --clr-text-primary: #171717;
+  --clr-text-secondary: #b1acac;
 
-    // Font weight
-    --fw-thin: ...;
-    --fw-normal: ...;
-    --fw-bold: ...;
+  // Font family
+  --ff-primary: "Source Code Pro", monospace;
+  --ff-secondary: ...;
+
+  // Font size
+  --fs-small: 0.8rem;
+  --fs-medium: 1rem;
+  --fs-large: 1.4rem;
+  --fs-largest: 3rem;
+
+  // Font weight
+  --fw-thin: 200;
+  --fw-normal: 300;
+  --fw-bold: 400;
+  --fw-bolder: 500;
+  --fw-heavy: 700;
 }

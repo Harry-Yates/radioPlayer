@@ -1,4 +1,14 @@
 body {
-    background: var(--clr-primary);
-    color: var(--clr-secondary);
+  background: var(--clr-greyLight-1);
+  color: var(--clr-text-primary);
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
