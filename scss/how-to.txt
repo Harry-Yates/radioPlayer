@@ -1,0 +1,16 @@
+--------------- FORMAT ----------------
+- The files are named following this format '_nameOfFile.scss'. 
+- Every folder has a '_index.scss' that needs to @forward every file in the folder.
+- These are then imported in main.scss with the @use keyword.
+- If you want to use the content from a file in a different folder (can only think of variables as a usecase, a pretty common one though) you have to import it following the same format used in main.scss. To be able to use variables in a different file that would be '@use './basic' as *;', without the single quotes.
+
+Important: Remember to add any new files to the index file in the appropriate folder. Using the following format '@forward './NAME-OF-FILE';', without the single quotes.
+
+--------------- FOLDER STRUCTURE ----------------
+- 'basic' contains the most basic scss such as a reset, variables, fonts etc.
+- 'components' contains everything that could be considered a reusable compontent, e.g. buttons, modals, forms...
+- 'helpers' contains utility classes for ease of use e.g. container, center, margin.
+- 'modifiers' contains scss that is specific to a certain modifier. This could for example be changes to the layout or a button that should only apply to a specific modifier.
+
+--------------- RUNNING SCSS ----------------
+I'm not sure if the extension to watch sass works so potentially you have to run the following command from the terminal while in "the impossible quiz" folder: sass --watch scss/main.scss:css/main.css
