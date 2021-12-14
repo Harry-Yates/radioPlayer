@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/icons/sat.png"/>
-    <link rel="stylesheet" href="./css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/icons/sat.png" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Swedish Radio</title>
-</head>
-<body>
-    <h1>radioPlayer Hello test TEST</h1>
-    <h5>radioPlayer Hello test TEST</h5>
-    <p>RADIO STATION</p>
-    <script src="./scripts/app.js></script>
-</body>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="dark-light">
+          <div class=dark-light__switch></div>
+        </div>
+        <div class="songDetails">
+          <span class="currently-playing-label">Radio Station</span>
+          <span class="currently-playing-artist">Artist</span>
+        </div>
+        <div id="album-container">
+          <div class="album__holder"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="weather">
+          <div class="weatherIcon"></div>
+          <p class="weather__location">london</p>
+          <p class="temperature">10°</p>
+        </div>
+        <div class="currently-playing" aria-label="Currently playing">
+          <span class="currently-playing-title">Now Playing:</span>
+        </div>
+        <div class="volume-controls">
+          <button name="mute" class="button mute-button" aria-label="Mute/unmute">
+            <i class="fas fa-volume-down" aria-hidden></i>
+          </button>
+          <input type="range" name="volume" class="volume" min="0" max="1" step="0.05" value="0.2" aria-label="Volume" />
+        <div class="radio-player">
+          <audio src="http://sverigesradio.se/topsy/direkt/srapi/164.mp3" id="stream"></audio>
+          <div class="player-controls">
+            <button name="play-pause" class="button play-pause-button" aria-label="Play/pause">
+              <i class="fas fa-play" aria-hidden></i>
+            </button><div>
+      </div>
+    </main>
+    <script src="./scripts/app.js"></script>
+  </body>
 </html>

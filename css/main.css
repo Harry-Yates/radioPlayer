@@ -16,6 +16,7 @@
   --fs-small: 0.8rem;
   --fs-medium: 1rem;
   --fs-large: 1.4rem;
+  --fs-larger: 1.9rem;
   --fs-largest: 3rem;
   --fw-thin: 200;
   --fw-normal: 300;
@@ -24,6 +25,14 @@
   --fw-heavy: 700;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   background: var(--clr-greyLight-1);
   color: var(--clr-text-primary);
@@ -34,9 +43,19 @@ body {
 main {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  text-align: center;
+}
+
+.container {
+  border: 1px solid red;
+  height: 90vh;
+  width: 80vw;
+  max-height: 896px;
+  min-width: 375px;
 }
 
 * {
@@ -48,6 +67,81 @@ main {
 body,
 button {
   font-family: var(--ff-primary);
+}
+
+.dark-light {
+  display: flex;
+  justify-content: flex-end;
+  border: green 1px solid;
+}
+
+.dark-light__switch {
+  height: 20px;
+  width: 40px;
+  background-color: blue;
+  border-radius: 30px;
+  margin-top: 1.2em;
+  margin-right: 1.8em;
+}
+
+.songDetails {
+  display: flex;
+  flex-direction: column;
+  border: orange 1px solid;
+  text-transform: uppercase;
+}
+
+.currently-playing-label,
+.currently-playing-artist {
+  margin-top: 0.9rem;
+}
+
+.currently-playing-artist {
+  margin-top: 1rem;
+  font-size: var(--fs-larger);
+  height: 4.5rem;
+}
+
+#album-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: pink 3px solid;
+}
+#album-container .dot {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--clr-greyLight-1);
+  z-index: 1;
+}
+
+#album-container > img {
+  object-fit: cover;
+  height: 270px;
+  width: 270px;
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+  border-radius: 50%;
+  background-size: 100%;
+  background-image: no-repeat-y;
+}
+
+.album__holder {
+  object-fit: cover;
+  height: 297px;
+  width: 297px;
+  border: solid 1px green;
+  background-color: green;
+  border-radius: 10px;
+  border-radius: 50%;
+  background-image: url("../assets/images/albumCover.jpg");
+  background-size: 100%;
+  background-image: no-repeat-y;
 }
 
 /*# sourceMappingURL=main.css.map */

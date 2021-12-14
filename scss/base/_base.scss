@@ -8,7 +8,17 @@ body {
 main {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  text-align: center;
+}
+
+.container {
+  border: 1px solid red;
+  height: 90vh;
+  width: 80vw;
+  max-height: 896px;
+  min-width: 375px;
 }
