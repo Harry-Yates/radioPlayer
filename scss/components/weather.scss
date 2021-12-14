@@ -1,0 +1,36 @@
+.weather {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: yellow 3px solid;
+  text-transform: uppercase;
+}
+
+.weather__Icon {
+  width: 70px;
+}
+
+.weather__location {
+  padding: 30px;
+}
+
+.weather__temperature {
+  padding: 30px;
+}
+
+// .currently-playing-artist {
+//   margin-top: 1rem;
+//   font-size: var(--fs-larger);
+// }
+
+// --fs-small: 0.8rem;
+// --fs-medium: 1rem;
+// --fs-large: 1.4rem;
+// --fs-largest: 3rem;
+
+// // Font weight
+// --fw-thin: 200;
+// --fw-normal: 300;
+// --fw-bold: 400;
+// --fw-bolder: 500;
+// --fw-heavy: 700;

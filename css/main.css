@@ -99,7 +99,7 @@ button {
 .currently-playing-artist {
   margin-top: 1rem;
   font-size: var(--fs-larger);
-  height: 4.5rem;
+  margin-bottom: 1rem;
 }
 
 #album-container {
@@ -109,8 +109,8 @@ button {
   border: pink 3px solid;
 }
 #album-container .dot {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   position: absolute;
   border-radius: 50%;
   background-color: var(--clr-greyLight-1);
@@ -133,8 +133,8 @@ button {
 
 .album__holder {
   object-fit: cover;
-  height: 297px;
-  width: 297px;
+  height: 270px;
+  width: 270px;
   border: solid 1px green;
   background-color: green;
   border-radius: 10px;
@@ -142,6 +142,26 @@ button {
   background-image: url("../assets/images/albumCover.jpg");
   background-size: 100%;
   background-image: no-repeat-y;
+}
+
+.weather {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: yellow 3px solid;
+  text-transform: uppercase;
+}
+
+.weather__Icon {
+  width: 70px;
+}
+
+.weather__location {
+  padding: 30px;
+}
+
+.weather__temperature {
+  padding: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

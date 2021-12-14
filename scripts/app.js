@@ -63,6 +63,26 @@ function changeArtwork() {
     });
 }
 
+navigator.geolocation.getCurrentPosition((position) => {
+  fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+    .then((res) => {
+      if (!res.ok) {
+        throw Error("Weather data not available");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      document.querySelector(".weather").innerHTML = `
+			<img class="weather__Icon" src=${iconUrl} />
+			<p class="weather__location">${data.name}</p>
+			<p class="weather__temperature">${Math.round(data.main.temp)}º</p>
+		`;
+    })
+    .catch((err) => console.error(err));
+});
+
 setInterval(function () {
   changeArtwork();
 }, 45000);
