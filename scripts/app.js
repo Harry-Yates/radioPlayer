@@ -167,7 +167,7 @@ playBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
     document.getElementById("album-container").innerHTML = `
-    <img src="./assets/images/albumCover.jpg")>
+    <img src="./assets/images/album.jpg")>
     <div class="dot"></div>
     `;
 
