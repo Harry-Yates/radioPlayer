@@ -71,33 +71,52 @@ audio.volume = currentVolume;
 //     currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
 //   });
 
+// const fetchCurrentlyPlaying = () =>
+//   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       if (data.setup === null) {
+//         //Station
+//         currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+//         //Song
+//         currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+//         currentlyPlayingSong.innerText = `${data.playlist.previoussong.title}`;
+//         currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+//         //Artist
+//         currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+//         currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
+//         currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+//       } else {
+//         //Station
+//         currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+//         //Song
+//         currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+//         currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
+//         currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+//         //Artist
+//         currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+//         currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
+//         currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+//       }
+//     })
+//     .catch((err) => console.error(err));
+
 const fetchCurrentlyPlaying = () =>
   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
     .then((response) => response.json())
     .then((data) => {
-      if (data.setup === null) {
-        //Station
-        currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-        //Song
-        currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-        currentlyPlayingSong.innerText = `${data.playlist.previoussong.title}`;
-        currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-        //Artist
-        currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-        currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
-        currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-      } else {
-        //Station
-        currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-        //Song
-        currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-        currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
-        currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-        //Artist
-        currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-        currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
-        currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-      }
+      currentlyPlayingSong.innerText = data.playlist.song.title ? data.playlist.song.title : data.playlist.previoussong.title;
+      currentlyPlayingArtist.innerText = data.playlist.song.artist ? data.playlist.song.artist : data.playlist.previoussong.artist;
+      //Station
+      currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+      //Song
+      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+      currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+      //Artist
+      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+      currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+
+      // console.log(data);
     })
     .catch((err) => console.error(err));
 
@@ -213,9 +232,9 @@ playBtn.addEventListener("click", () => {
     `;
 
     clearInterval(fetchInterval);
-    currentlyPlayingLabel.innerText = "Radio Station";
-    currentlyPlaying.innerText = "PLAY";
-    currentlyPlayingArtist.innerText = "Artist";
+    // currentlyPlayingLabel.innerText = "RADIO STATION";
+    // currentlyPlaying.innerText = "PLAY";
+    // currentlyPlayingArtist.innerText = "Artist";
   } else {
     audio.play();
     changeArtwork();
@@ -226,3 +245,13 @@ playBtn.addEventListener("click", () => {
 
   isPlaying = !isPlaying;
 });
+
+// // Artist
+// const currentlyPlayingArtistNext = document.querySelector(".currently-playing-artist-next");
+// const currentlyPlayingArtist = document.querySelector(".currently-playing-artist");
+// const currentlyPlayingArtistPrevious = document.querySelector(".currently-playing-artist-previous");
+
+// //Song
+// const currentlyPlayingSongNext = document.querySelector(".currently-playing-song-next");
+// const currentlyPlayingSong = document.querySelector(".currently-playing-song");
+// const currentlyPlayingSongPrevious = document.querySelector(".currently-playing-song-previous");
