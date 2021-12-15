@@ -6,6 +6,22 @@ const volumeControl = document.querySelector('[name="volume"]');
 const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
 const currentlyPlaying = document.querySelector(".currently-playing-title");
 const currentlyPlayingArtist = document.querySelector(".currently-playing-artist");
+const play = document.querySelector(".play");
+const pause = document.querySelector(".pause");
+const playBtn = document.querySelector(".circle__btn");
+const wave1 = document.querySelector(".circle__back-1");
+const wave2 = document.querySelector(".circle__back-2");
+
+/*  play button  */
+playBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  pause.classList.toggle("visibility");
+  play.classList.toggle("visibility");
+  playBtn.classList.toggle("shadow");
+  wave1.classList.toggle("paused");
+  wave2.classList.toggle("paused");
+});
+
 // const currentlyPlayingComposer = document.querySelector(".currently-playing-composer");
 // const currentlyPlayingRecordLabel = document.querySelector(".currently-playing-recordLabel");
 

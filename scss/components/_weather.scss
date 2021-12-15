@@ -1,9 +1,18 @@
-.weather {
+.weather-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  border: yellow 3px solid;
+  margin: 1rem;
+}
+
+.weather {
   text-transform: uppercase;
+  box-shadow: var(--clr-text-shadow);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .weather__Icon {
@@ -11,11 +20,11 @@
 }
 
 .weather__location {
-  padding: 30px;
+  padding: 15px;
 }
 
 .weather__temperature {
-  padding: 30px;
+  padding: 15px;
 }
 
 // .currently-playing-artist {

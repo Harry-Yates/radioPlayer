@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: pink 3px solid;
   .dot {
     width: 45px;
     height: 45px;
@@ -10,6 +9,7 @@
     border-radius: 50%;
     background-color: var(--clr-greyLight-1);
     z-index: 1;
+    box-shadow: var(--clr-text-inner-shadow);
   }
 }
 
@@ -25,19 +25,19 @@
   border-radius: 50%;
   background-size: 100%;
   background-image: no-repeat-y;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2), -0.2rem -0.2rem 0.5rem var(--clr-white);
 }
 
 .album__holder {
   object-fit: cover;
   height: 270px;
   width: 270px;
-  border: solid 1px green;
-  background-color: green;
-  border-radius: 10px;
+  border-radius: 50%;
   border-radius: 50%;
   background-image: url("../assets/images/albumCover.jpg");
   background-size: 100%;
   background-image: no-repeat-y;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2), -0.2rem -0.2rem 0.5rem var(--clr-white);
 }
 
 // .currently-playing-artist {

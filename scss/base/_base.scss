@@ -16,9 +16,11 @@ main {
 }
 
 .container {
-  border: 1px solid red;
   height: 90vh;
   width: 80vw;
   max-height: 896px;
   min-width: 375px;
+  background: var(--clr-greyLight-1);
+  border-radius: 3rem;
+  box-shadow: 0.8rem 0.8rem 1.4rem var(--clr-greyLight-2), -0.2rem -0.2rem 1.8rem var(--clr-white);
 }
