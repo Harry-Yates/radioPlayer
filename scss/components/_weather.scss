@@ -2,12 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
 }
 
 .weather {
   text-transform: uppercase;
-  box-shadow: var(--clr-text-shadow);
+  // box-shadow: var(--clr-text-shadow);
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;

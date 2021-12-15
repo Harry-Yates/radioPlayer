@@ -12,6 +12,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
     <title>Swedish Radio</title>
   </head>
   <body>
@@ -42,29 +44,26 @@
           <button name="mute" class="button mute-button" aria-label="Mute/unmute">
             <i class="fas fa-volume-down" aria-hidden></i>
           </button>
-      
           <input type="range" name="volume" class="volume" min="0" max="1" step="0.05" value="0.2" aria-label="Volume" />
           </div>
+          <div class="circle-container">
+           <button class="button play-pause-button">
+            <div class="circle">
+              <span class="circle__btn shadow">
+                <audio src="http://sverigesradio.se/topsy/direkt/srapi/164.mp3" id="stream"></audio>
+                <ion-icon class="pause visibility" name="pause" ></ion-icon>
+                <ion-icon class="play visibility" name="play"></ion-icon>
+              </span>
+              <span class="circle__back-1 paused"></span>
+              <span class="circle__back-2 paused"></span>
+            </div>
+          </div>
+            <script src="./script.js"></script>
+          </body>
+        </html>
 
-        <div class="radio-player">
-          <audio src="http://sverigesradio.se/topsy/direkt/srapi/164.mp3" id="stream"></audio>
-          <div class="player-controls">
-            <button name="play-pause" class="button play-pause-button" aria-label="Play/pause">
-              <i class="fas fa-play" aria-hidden></i>
-            </button><div>
-      </div>
-
-
-    <div class="circle">
-      <span class="circle__btn">
-        <ion-icon class="pause" name="pause"></ion-icon>
-        <ion-icon class="play" name="play"></ion-icon>
-      </span>
-      <span class="circle__back-1"></span>
-      <span class="circle__back-2"></span>
-    </div>
-      
     </main>
+
     <script src="./scripts/app.js"></script>
   </body>
 </html>

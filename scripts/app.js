@@ -1,18 +1,24 @@
 const audio = document.querySelector("#stream");
-const playPauseButton = document.querySelector('[name="play-pause"]');
-const playPauseButtonIcon = playPauseButton.querySelector("i.fas");
 const volumeControl = document.querySelector('[name="volume"]');
 
 const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
 const currentlyPlaying = document.querySelector(".currently-playing-title");
 const currentlyPlayingArtist = document.querySelector(".currently-playing-artist");
+
+// const currentlyPlayingComposer = document.querySelector(".currently-playing-composer");
+// const currentlyPlayingRecordLabel = document.querySelector(".currently-playing-recordLabel");
+
+const volumeButton = document.querySelector('[name="mute"]');
+const volumeButtonIcon = volumeButton.querySelector("i.fas");
+const url = "https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164";
+
+/*  play button */
 const play = document.querySelector(".play");
 const pause = document.querySelector(".pause");
 const playBtn = document.querySelector(".circle__btn");
 const wave1 = document.querySelector(".circle__back-1");
 const wave2 = document.querySelector(".circle__back-2");
 
-/*  play button  */
 playBtn.addEventListener("click", function (e) {
   e.preventDefault();
   pause.classList.toggle("visibility");
@@ -21,13 +27,6 @@ playBtn.addEventListener("click", function (e) {
   wave1.classList.toggle("paused");
   wave2.classList.toggle("paused");
 });
-
-// const currentlyPlayingComposer = document.querySelector(".currently-playing-composer");
-// const currentlyPlayingRecordLabel = document.querySelector(".currently-playing-recordLabel");
-
-const volumeButton = document.querySelector('[name="mute"]');
-const volumeButtonIcon = volumeButton.querySelector("i.fas");
-const url = "https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164";
 
 let isPlaying = false;
 let fetchInterval = null;
@@ -164,26 +163,21 @@ volumeButton.addEventListener("click", () => {
   }
 });
 
-playPauseButton.addEventListener("click", () => {
+playBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
-    document.getElementById("album-container").innerHTML = "";
-
-    playPauseButtonIcon.classList.remove("fa-pause");
-    playPauseButtonIcon.classList.add("fa-play");
+    document.getElementById("album-container").innerHTML = `
+    <img src="../assets/images/albumCover.jpg")>
+    <div class="dot"></div>
+    `;
 
     clearInterval(fetchInterval);
     currentlyPlayingLabel.innerText = "Radio Station";
-    currentlyPlaying.innerText = "Now Playing";
+    currentlyPlaying.innerText = "PLAY";
     currentlyPlayingArtist.innerText = "Artist";
-    // currentlyPlayingComposer.innerText = "Composer";
-    // currentlyPlayingRecordLabel.innerText = "Record Label:";
   } else {
     audio.play();
     changeArtwork();
-
-    playPauseButtonIcon.classList.remove("fa-play");
-    playPauseButtonIcon.classList.add("fa-pause");
 
     fetchCurrentlyPlaying();
     fetchInterval = setInterval(fetchCurrentlyPlaying, 3000);
