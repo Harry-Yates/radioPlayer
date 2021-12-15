@@ -1,6 +1,6 @@
 .songDetails {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
@@ -8,6 +8,23 @@
   // height: 6rem;
   // box-shadow: var(--clr-text-shadow);
   // box-shadow: var(--clr-text-inner-shadow);
+}
+
+.currently-playing-artist-next,
+.currently-playing-artist-previous {
+  margin-top: 0.9rem;
+  padding: 0.7rem;
+  font-size: 0.5rem;
+  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 70px;
+
+  box-shadow: var(--clr-text-inner-shadow);
+
+  border-radius: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .currently-playing-label,
@@ -22,12 +39,9 @@
 .currently-playing-artist {
   padding: 1rem;
   font-size: var(--fs-medium);
-  margin: 1rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
-
+  margin-bottom: 1rem;
   box-shadow: var(--clr-text-inner-shadow);
-
+  border: 1px solid var(--clr-primary);
   border-radius: 1rem;
   justify-content: space-between;
   align-items: center;
@@ -35,16 +49,39 @@
 
 /// LOWER COPY
 
-.currently-playing-title {
-  font-size: 1.2rem;
-  margin-bottom: 1.2rem;
+.currently-playing {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+}
+
+.currently-playing-song {
   padding: 1rem;
+  font-size: var(--fs-medium);
   margin-bottom: 1rem;
   box-shadow: var(--clr-text-inner-shadow);
+  border: 1px solid var(--clr-primary);
   border-radius: 1rem;
   justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
+}
+
+.currently-playing-song-next,
+.currently-playing-song-previous {
+  margin-top: 0.9rem;
+  padding: 0.7rem;
+  font-size: 0.5rem;
+  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 70px;
+  box-shadow: var(--clr-text-inner-shadow);
+
+  border-radius: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 // --fs-small: 0.8rem;

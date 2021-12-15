@@ -2,11 +2,16 @@ const audio = document.querySelector("#stream");
 const volumeControl = document.querySelector('[name="volume"]');
 
 const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
-const currentlyPlaying = document.querySelector(".currently-playing-title");
-const currentlyPlayingArtist = document.querySelector(".currently-playing-artist");
 
-// const currentlyPlayingComposer = document.querySelector(".currently-playing-composer");
-// const currentlyPlayingRecordLabel = document.querySelector(".currently-playing-recordLabel");
+// Artist
+const currentlyPlayingArtistNext = document.querySelector(".currently-playing-artist-next");
+const currentlyPlayingArtist = document.querySelector(".currently-playing-artist");
+const currentlyPlayingArtistPrevious = document.querySelector(".currently-playing-artist-previous");
+
+//Song
+const currentlyPlayingSongNext = document.querySelector(".currently-playing-song-next");
+const currentlyPlayingSong = document.querySelector(".currently-playing-song");
+const currentlyPlayingSongPrevious = document.querySelector(".currently-playing-song-previous");
 
 const volumeButton = document.querySelector('[name="mute"]');
 const volumeButtonIcon = volumeButton.querySelector("i.fas");
@@ -42,22 +47,28 @@ const fetchCurrentlyPlaying = () =>
   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
     .then((response) => response.json())
     .then((data) => {
+      //Station
       currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-      currentlyPlaying.innerText = `${data.playlist.song.title}`;
+      //Song
+      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+      currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
+      currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+      //Artist
+      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
       currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
-      //   currentlyPlayingComposer.innerText = `${data.playlist.song.composer}`;
-      //   currentlyPlayingRecordLabel.innerText = `${data.playlist.song.recordlabel}`;
+      currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
     })
     .catch((err) => {
-      fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
-        .then((response) => response.json())
-        .then((data) => {
-          currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-          currentlyPlaying.innerText = `${data.playlist.previoussong.title}`;
-          currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
-          //   currentlyPlayingComposer.innerText = `${data.playlist.previoussong.composer}`;
-          //   currentlyPlayingRecordLabel.innerText = `${data.playlist.previoussong.recordlabel}`;
-        });
+      //Station
+      currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+      //Song
+      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+      currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
+      currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+      //Artist
+      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+      currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
+      currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
     });
 
 //fall back to previous song if song is empty.
