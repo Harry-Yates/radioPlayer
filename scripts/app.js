@@ -43,33 +43,63 @@ audio.volume = currentVolume;
 //   .then((response) => response.json())
 //   .then((data) => console.log(data));
 
+// const fetchCurrentlyPlaying = () =>
+// fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     //Station
+//     currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+//     //Song
+//     currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+//     currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
+//     currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+//     //Artist
+//     currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+//     currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
+//     currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+//   })
+//   .catch((err) => {
+//     //Station
+//     currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+//     //Song
+//     currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+//     currentlyPlayingSong.innerText = `${data.playlist.previoussong.title}`;
+//     currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+//     //Artist
+//     currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+//     currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
+//     currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+//   });
+
 const fetchCurrentlyPlaying = () =>
   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
     .then((response) => response.json())
     .then((data) => {
-      //Station
-      currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-      //Song
-      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-      currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
-      currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-      //Artist
-      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-      currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
-      currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+      if (data.setup === null) {
+        //Station
+        currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+        //Song
+        currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+        currentlyPlayingSong.innerText = `${data.playlist.previoussong.title}`;
+        currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+        //Artist
+        currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+        currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
+        currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+      } else {
+        //Station
+        currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
+        //Song
+        currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
+        currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
+        currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
+        //Artist
+        currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+        currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
+        currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+      }
     })
-    .catch((err) => {
-      //Station
-      currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-      //Song
-      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-      currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
-      currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-      //Artist
-      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-      currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
-      currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-    });
+    .catch((err) => console.error(err));
 
 //fall back to previous song if song is empty.
 
