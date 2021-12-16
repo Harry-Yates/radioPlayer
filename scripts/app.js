@@ -227,6 +227,20 @@ volumeButton.addEventListener("click", () => {
   }
 });
 
+document.getElementById("switch-2").addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  console.log("toggle clicked");
+});
+
+/* <body class="dark"> */
+
+// <div class='switch'>
+//   <div class='switch__2'>
+//     <input id='switch-2' type='checkbox' checked />
+//     <label for='switch-2'></label>
+//   </div>
+// </div>;
+
 playBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();

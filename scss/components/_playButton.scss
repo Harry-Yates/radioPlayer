@@ -9,18 +9,18 @@ $inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2
   cursor: pointer;
   border: none;
   border-radius: 100%;
-  width: 70px;
-  height: 70px;
+  width: 1px;
+  height: 1px;
   font-size: 25px;
   margin-right: 24px;
+  background-color: transparent;
 }
 
 .circle-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
-  border: red 1px;
+  margin-top: 4rem;
 }
 
 /*  PLAY BUTTON  */
@@ -29,9 +29,9 @@ $inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2
   height: 100%;
   border-radius: 1rem;
   display: grid;
-  grid-template-rows: 1fr;
   justify-items: center;
   align-items: center;
+  margin-left: 20px;
 
   &__btn {
     grid-row: 1 / 2;
@@ -99,33 +99,5 @@ $inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2
     &.paused {
       animation-play-state: paused;
     }
-  }
-}
-
-@-webkit-keyframes waves {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes waves {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
   }
 }
