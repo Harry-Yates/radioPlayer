@@ -128,7 +128,7 @@ main {
 
 .container {
   height: 95vh;
-  width: 20vw;
+  width: 22vw;
   max-height: 896px;
   min-width: 375px;
   background: var(--clr-greyLight-1);
@@ -217,6 +217,11 @@ button {
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
+}
+
+.songDetails {
+  margin-top: 1rem;
 }
 
 .currently-playing-artist-next,
@@ -268,6 +273,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 #album-container .dot {
   width: 45px;
@@ -311,6 +317,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 0.8rem;
 }
 
 .weather {
@@ -337,6 +344,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .mute-button {
