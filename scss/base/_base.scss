@@ -34,6 +34,10 @@ body.dark {
     height: 1rem;
     color: var(--clr-primary);
   }
+
+  .switch__2 {
+    background: var(--clr-primary);
+  }
 }
 
 main {
@@ -48,7 +52,7 @@ main {
 
 .container {
   height: 95vh;
-  width: 40vw;
+  width: 20vw;
   max-height: 896px;
   min-width: 375px;
   background: var(--clr-greyLight-1);

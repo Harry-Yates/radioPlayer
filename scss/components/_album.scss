@@ -26,6 +26,7 @@
   background-size: 100%;
   background-image: no-repeat-y;
   box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2), -0.2rem -0.2rem 0.5rem var(--clr-white);
+  animation: rotate 30s linear infinite;
 }
 
 .album__holder {

@@ -1,28 +1,27 @@
-.songDetails {
+.songDetails,
+.currently-playing {
   display: flex;
   flex-direction: row;
   text-transform: uppercase;
   justify-content: center;
   align-items: center;
-  // width: 17rem;
-  // height: 6rem;
-  // box-shadow: var(--clr-text-shadow);
-  // box-shadow: var(--clr-text-inner-shadow);
 }
 
 .currently-playing-artist-next,
-.currently-playing-artist-previous {
+.currently-playing-artist-previous,
+.currently-playing-song-next,
+.currently-playing-song-previous {
   margin-top: 0.9rem;
   padding: 0.7rem;
   font-size: 0.5rem;
   margin: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
-  width: 70px;
   box-shadow: var(--clr-text-inner-shadow);
   border-radius: 1rem;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .currently-playing-label,
@@ -34,27 +33,7 @@
   font-weight: var(--fw-heavy);
 }
 
-.currently-playing-artist {
-  padding: 1rem;
-  font-size: var(--fs-medium);
-  margin-bottom: 1rem;
-  box-shadow: var(--clr-text-inner-shadow);
-  border: 1px solid var(--clr-primary);
-  border-radius: 1rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/// LOWER COPY
-
-.currently-playing {
-  display: flex;
-  flex-direction: row;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-}
-
+.currently-playing-artist,
 .currently-playing-song {
   padding: 1rem;
   font-size: var(--fs-medium);
@@ -66,31 +45,8 @@
   align-items: center;
 }
 
-.currently-playing-song-next,
-.currently-playing-song-previous {
-  margin-top: 0.9rem;
-  padding: 0.7rem;
-  font-size: 0.5rem;
-  margin: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  width: 70px;
-  box-shadow: var(--clr-text-inner-shadow);
-
-  border-radius: 1rem;
-  justify-content: space-between;
-  align-items: center;
+.currently-playing-song,
+.currently-playing-artist {
+  letter-spacing: 1px;
+  font-weight: var(--fw-bolder);
 }
-
-// --fs-small: 0.8rem;
-// --fs-medium: 1rem;
-// --fs-large: 1.4rem;
-// --fs-larger: 1.9rem;
-// --fs-largest: 3rem;
-
-// // Font weight
-// --fw-thin: 200;
-// --fw-normal: 300;
-// --fw-bold: 400;
-// --fw-bolder: 500;
-// --fw-heavy: 700;

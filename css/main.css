@@ -76,6 +76,14 @@
     opacity: 0;
   }
 }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 body {
   background: var(--clr-greyLight-1);
   color: var(--clr-text-primary);
@@ -104,6 +112,9 @@ body.dark .mute-button > i {
   height: 1rem;
   color: var(--clr-primary);
 }
+body.dark .switch__2 {
+  background: var(--clr-primary);
+}
 
 main {
   position: relative;
@@ -117,7 +128,7 @@ main {
 
 .container {
   height: 95vh;
-  width: 40vw;
+  width: 20vw;
   max-height: 896px;
   min-width: 375px;
   background: var(--clr-greyLight-1);
@@ -153,6 +164,8 @@ button {
 
 .switch__2 {
   width: 3rem;
+  color: blue;
+  border-radius: 1.6rem;
 }
 
 .switch__2 label {
@@ -197,7 +210,8 @@ button {
   background: var(--clr-greyLight-1);
 }
 
-.songDetails {
+.songDetails,
+.currently-playing {
   display: flex;
   flex-direction: row;
   text-transform: uppercase;
@@ -206,18 +220,20 @@ button {
 }
 
 .currently-playing-artist-next,
-.currently-playing-artist-previous {
+.currently-playing-artist-previous,
+.currently-playing-song-next,
+.currently-playing-song-previous {
   margin-top: 0.9rem;
   padding: 0.7rem;
   font-size: 0.5rem;
   margin: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
-  width: 70px;
   box-shadow: var(--clr-text-inner-shadow);
   border-radius: 1rem;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .currently-playing-label,
@@ -229,25 +245,7 @@ button {
   font-weight: var(--fw-heavy);
 }
 
-.currently-playing-artist {
-  padding: 1rem;
-  font-size: var(--fs-medium);
-  margin-bottom: 1rem;
-  box-shadow: var(--clr-text-inner-shadow);
-  border: 1px solid var(--clr-primary);
-  border-radius: 1rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.currently-playing {
-  display: flex;
-  flex-direction: row;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-}
-
+.currently-playing-artist,
 .currently-playing-song {
   padding: 1rem;
   font-size: var(--fs-medium);
@@ -259,19 +257,10 @@ button {
   align-items: center;
 }
 
-.currently-playing-song-next,
-.currently-playing-song-previous {
-  margin-top: 0.9rem;
-  padding: 0.7rem;
-  font-size: 0.5rem;
-  margin: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  width: 70px;
-  box-shadow: var(--clr-text-inner-shadow);
-  border-radius: 1rem;
-  justify-content: space-between;
-  align-items: center;
+.currently-playing-song,
+.currently-playing-artist {
+  letter-spacing: 1px;
+  font-weight: var(--fw-bolder);
 }
 
 #album-container {
@@ -302,6 +291,7 @@ button {
   background-size: 100%;
   background-image: no-repeat-y;
   box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2), -0.2rem -0.2rem 0.5rem var(--clr-white);
+  animation: rotate 30s linear infinite;
 }
 
 .album__holder {
