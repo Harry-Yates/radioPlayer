@@ -127,9 +127,8 @@ main {
 }
 
 .container {
-  height: 95vh;
-  width: 22vw;
-  max-height: 896px;
+  height: 80vh;
+  min-height: 896px;
   min-width: 375px;
   background: var(--clr-greyLight-1);
   border-radius: 3rem;
@@ -233,6 +232,7 @@ button {
   font-size: 0.5rem;
   margin: 1rem;
   max-width: 70px;
+  min-width: 70px;
   margin-left: 1rem;
   margin-right: 1rem;
   box-shadow: var(--clr-text-inner-shadow);
@@ -261,6 +261,7 @@ button {
   border-radius: 1rem;
   justify-content: space-between;
   align-items: center;
+  max-width: 210px;
 }
 
 .currently-playing-song,

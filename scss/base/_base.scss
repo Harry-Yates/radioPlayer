@@ -51,9 +51,8 @@ main {
 }
 
 .container {
-  height: 95vh;
-  width: 22vw;
-  max-height: 896px;
+  height: 80vh;
+  min-height: 896px;
   min-width: 375px;
   background: var(--clr-greyLight-1);
   border-radius: 3rem;
