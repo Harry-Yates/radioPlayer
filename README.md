@@ -4,13 +4,15 @@
 
 - [LIVE DEMO](https://harry-yates.github.io/radioPlayer/)
 
-Radio player that plays songs via Sveriges Radio API. Previous, current and next songs are displayed in the UI.
+Radio player that plays the R3 channel via Sveriges Radio API.
+
+Previous, current and next songs are displayed in the Neumorphic style UI.
 
 Hyper Island - The First App - Brief 3.
 
 ### :open_file_folder: The Brief:
 
-Build a web app built upon Sveriges Radio API (though you are more than welcome to use another API if you wish)
+Build a web app built upon Sveriges Radio API.
 
 - Use plain JavaScript
 - Code should be readable
@@ -28,19 +30,23 @@ Build a web app built upon Sveriges Radio API (though you are more than welcome 
 
 ### :mechanical_arm: Solution:
 
-I built a small radio player component that is easy to maintain. I was able to achieve this by using a simple SASS structure. For this project, I took inspiration from [Neumorphic Elements(https://codepen.io/myacode/pen/PoqQQNM) Codepen I liked.
+I built a small radio player component that is easy to maintain. I was able to achieve this using a simple SASS structure. For this project, I took inspiration from [Neumorphic Elements](https://codepen.io/myacode/pen/PoqQQNM) Codepen I'd spotted and was keen to adapt.
 
 ### :anger: Challenges:
 
-This project was a chance for me to push myself working with JS, SASS and with APIs. I made use of three API's Sveriges Radio API, OpenWeather API and the unsplashi API to bring in music art as part of the interface.
+This project was a chance to push myself with JS, SASS and various APIs. I made use of three apis:
+
+- [Swedish Radio's open API](https://api.sr.se/api/documentation/v2/index.html)
+- [Open Weather API](https://openweathermap.org/api)
+- [Unsplash API](https://unsplash.com/developers)
 
 The documentation was in Swedish, which made things slightly challenging initially. However, I was able to jump this hurdle reasonably quickly.
 
 ### :man_student: Learnings:
 
-- BEM methodology & SASS structure
+- SASS Architecture
 - JavaScript
-- Manipulation API data
+- Manipulation of API data
 
 ### :computer: Tech used in this specific repository:
 
@@ -50,7 +56,3 @@ The documentation was in Swedish, which made things slightly challenging initial
 - CSS
 - SASS
 - JavaScript
-- JSON
-- [Swedish Radio's open API](https://api.sr.se/api/documentation/v2/index.html)
-- [Open Weather API](https://openweathermap.org/api)
-- [Unsplash API](https://unsplash.com/developers)
