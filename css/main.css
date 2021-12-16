@@ -152,8 +152,8 @@ button {
   display: flex;
   justify-content: flex-end;
   padding-right: 2.1em;
-  padding-top: 1.5rem;
-  padding-bottom: 0.2rem;
+  padding-top: 2rem;
+  padding-bottom: 0.7rem;
   align-items: center;
 }
 
@@ -227,6 +227,7 @@ button {
   padding: 0.7rem;
   font-size: 0.5rem;
   margin: 1rem;
+  max-width: 70px;
   margin-left: 1rem;
   margin-right: 1rem;
   box-shadow: var(--clr-text-inner-shadow);
@@ -408,7 +409,7 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 /*  PLAY BUTTON  */
