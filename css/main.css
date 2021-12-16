@@ -317,6 +317,7 @@ input[type=range]::-webkit-slider-thumb {
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+  border: red 1px;
 }
 
 /*  PLAY BUTTON  */

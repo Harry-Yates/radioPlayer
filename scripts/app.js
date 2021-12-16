@@ -105,8 +105,6 @@ const fetchCurrentlyPlaying = () =>
   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
     .then((response) => response.json())
     .then((data) => {
-      currentlyPlayingSong.innerText = data.playlist.song.title ? data.playlist.song.title : data.playlist.previoussong.title;
-      currentlyPlayingArtist.innerText = data.playlist.song.artist ? data.playlist.song.artist : data.playlist.previoussong.artist;
       //Station
       currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
       //Song
@@ -115,6 +113,12 @@ const fetchCurrentlyPlaying = () =>
       //Artist
       currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
       currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
+
+      currentlyPlayingSong.innerText = `NEXT SONG LOADING`;
+      currentlyPlayingArtist.innerText = `DJ TALKING`;
+
+      currentlyPlayingSong.innerText = `${data.playlist.song.title}` ? `${data.playlist.song.title}` : `${data.playlist.previoussong.title}`;
+      currentlyPlayingArtist.innerText = `${data.playlist.song.artist}` ? `${data.playlist.song.artist}` : `${data.playlist.previoussong.artist}`;
 
       // console.log(data);
     })
@@ -232,9 +236,13 @@ playBtn.addEventListener("click", () => {
     `;
 
     clearInterval(fetchInterval);
-    // currentlyPlayingLabel.innerText = "RADIO STATION";
-    // currentlyPlaying.innerText = "PLAY";
-    // currentlyPlayingArtist.innerText = "Artist";
+    currentlyPlayingLabel.innerText = "RADIO STATION";
+    currentlyPlayingSong.innerText = "PLAY";
+    currentlyPlayingArtist.innerText = "Artist";
+    currentlyPlayingSongNext.innerText = "NEXT";
+    currentlyPlayingSongPrevious.innerText = "PREV";
+    currentlyPlayingArtistNext.innerText = "NEXT";
+    currentlyPlayingArtistPrevious.innerText = "PREV";
   } else {
     audio.play();
     changeArtwork();
