@@ -26,13 +26,13 @@ Build a web app built upon Sveriges Radio API.
 
 - Make use of Sveriges Radio API.
 - Create a radio player with a nice UI.
-- App needs to be maintainable as we will be recreating it in React for the next brief.
+- The app needs to be maintainable as we'll be recreating it in React for the following brief.
 
 ### :mechanical_arm: Solution:
 
-I built a small radio player component that is easy to maintain. I was able to achieve this using a simple SASS structure. For this project, I took inspiration from [Neumorphic Elements](https://codepen.io/myacode/pen/PoqQQNM) Codepen I'd spotted and was keen to adapt.
+I built a small radio player component that is easy to maintain. I was able to achieve this using a simple SASS structure. For this project, I took inspiration from a [Neumorphic Elements](https://codepen.io/myacode/pen/PoqQQNM) Codepen I'd spotted and was keen to adapt.
 
-This project was a chance to push myself with JS, SASS and various APIs. I made use of three apis:
+This project was a chance to push myself with JS, SASS and various APIs. I made use of three apis in this project:
 
 - [Swedish Radio's open API](https://api.sr.se/api/documentation/v2/index.html)
 - [Open Weather API](https://openweathermap.org/api)
