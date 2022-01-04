@@ -39,68 +39,6 @@ let currentVolume = 0.2;
 
 audio.volume = currentVolume;
 
-// fetch("http://sverigesradio.se/topsy/direkt/132.mp3")
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
-
-// const fetchCurrentlyPlaying = () =>
-// fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     //Station
-//     currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-//     //Song
-//     currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-//     currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
-//     currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-//     //Artist
-//     currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-//     currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
-//     currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-//   })
-//   .catch((err) => {
-//     //Station
-//     currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-//     //Song
-//     currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-//     currentlyPlayingSong.innerText = `${data.playlist.previoussong.title}`;
-//     currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-//     //Artist
-//     currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-//     currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
-//     currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-//   });
-
-// const fetchCurrentlyPlaying = () =>
-//   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       if (data.setup === null) {
-//         //Station
-//         currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-//         //Song
-//         currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-//         currentlyPlayingSong.innerText = `${data.playlist.previoussong.title}`;
-//         currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-//         //Artist
-//         currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-//         currentlyPlayingArtist.innerText = `${data.playlist.previoussong.artist}`;
-//         currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-//       } else {
-//         //Station
-//         currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
-//         //Song
-//         currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
-//         currentlyPlayingSong.innerText = `${data.playlist.song.title}`;
-//         currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
-//         //Artist
-//         currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
-//         currentlyPlayingArtist.innerText = `${data.playlist.song.artist}`;
-//         currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
-//       }
-//     })
-//     .catch((err) => console.error(err));
-
 const fetchCurrentlyPlaying = () =>
   fetch("https://api.sr.se/api/v2/playlists/rightnow?format=json&indent=true&channelid=164")
     .then((response) => response.json())
@@ -108,17 +46,20 @@ const fetchCurrentlyPlaying = () =>
       //Station
       currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`;
       //Song
-      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
       currentlyPlayingSongPrevious.innerText = `${data.playlist.previoussong.title}`;
       //Artist
-      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
       currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`;
 
       currentlyPlayingSong.innerText = `NEXT SONG LOADING`;
       currentlyPlayingArtist.innerText = `DJ TALKING`;
+      currentlyPlayingArtistNext.innerText = `ED SHEERAN`;
+      currentlyPlayingSongNext.innerText = `BAD HABITS`;
 
       currentlyPlayingSong.innerText = `${data.playlist.song.title}` ? `${data.playlist.song.title}` : `${data.playlist.previoussong.title}`;
       currentlyPlayingArtist.innerText = `${data.playlist.song.artist}` ? `${data.playlist.song.artist}` : `${data.playlist.previoussong.artist}`;
+
+      currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`;
+      currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`;
 
       // console.log(data);
     })
@@ -232,15 +173,6 @@ document.getElementById("switch-2").addEventListener("click", () => {
   console.log("toggle clicked");
 });
 
-/* <body class="dark"> */
-
-// <div class='switch'>
-//   <div class='switch__2'>
-//     <input id='switch-2' type='checkbox' checked />
-//     <label for='switch-2'></label>
-//   </div>
-// </div>;
-
 playBtn.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
@@ -267,13 +199,3 @@ playBtn.addEventListener("click", () => {
 
   isPlaying = !isPlaying;
 });
-
-// // Artist
-// const currentlyPlayingArtistNext = document.querySelector(".currently-playing-artist-next");
-// const currentlyPlayingArtist = document.querySelector(".currently-playing-artist");
-// const currentlyPlayingArtistPrevious = document.querySelector(".currently-playing-artist-previous");
-
-// //Song
-// const currentlyPlayingSongNext = document.querySelector(".currently-playing-song-next");
-// const currentlyPlayingSong = document.querySelector(".currently-playing-song");
-// const currentlyPlayingSongPrevious = document.querySelector(".currently-playing-song-previous");
