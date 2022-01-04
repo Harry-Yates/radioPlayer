@@ -45,7 +45,7 @@ The documentation was in Swedish, which made things slightly challenging initial
 ### :man_student: Learnings:
 
 - SASS Architecture
-- SASS Variablesd
+- SASS Variables
 - JavaScript
 - Manipulation of API data
 
