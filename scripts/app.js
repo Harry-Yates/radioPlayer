@@ -61,7 +61,7 @@ const fetchCurrentlyPlaying = () =>
         .then(response => response.json())
         .then(data => {
             // console.log(data)
-
+            artworkTimer()
             //Station
             currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`
             //Song
@@ -92,22 +92,16 @@ const fetchCurrentlyPlaying = () =>
 // `http://api.sr.se/api/v2/playlists/getplaylistbychannelid?id=164&format=json`
 
 var artworkTimer = function () {
-    if (
-        currentlyPlayingArtistNext.innerText !==
-        currentlyPlayingArtistNext.innerText
-    ) {
-        changeArtwork()
-    }
     if (currentlyPlayingArtist.innerText === `DJ TALKING`) {
         document.getElementById("album-container").innerHTML = `
       <img  src="./assets/images/p3.png") />
       <div class="dot"></div>`
+    } else {
+        setInterval(function () {
+            changeArtwork()
+        }, 1200000)
     }
 }
-
-setInterval(function () {
-    artworkTimer()
-}, 90000)
 
 const fetchCurrentlyPlayingPlaylist = () =>
     fetch(
@@ -253,11 +247,11 @@ playBtn.addEventListener("click", () => {
         fetchCurrentlyPlayingPlaylist()
         fetchCurrentlyPlayingInterval = setInterval(
             fetchCurrentlyPlaying,
-            3000,
+            30000,
         )
         fetchCurrentlyPlayingPlaylistInterval = setInterval(
             fetchCurrentlyPlayingPlaylist,
-            3000,
+            30000,
         )
     }
 
