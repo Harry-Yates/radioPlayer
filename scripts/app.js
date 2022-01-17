@@ -97,9 +97,9 @@ var artworkTimer = function () {
       <img  src="./assets/images/p3.png") />
       <div class="dot"></div>`
     } else {
-        setInterval(function () {
+        setTimeout(function () {
             changeArtwork()
-        }, 120000)
+        }, 1)
     }
 }
 
@@ -109,9 +109,15 @@ const fetchCurrentlyPlayingPlaylist = () =>
     )
         .then(response => response.json())
         .then(dataPlay => {
+            currentlyPlayingArtistNext.innerText = "Seal"
+            currentlyPlayingSongNext.innerText = "Kiss From A Rose"
             // console.log(dataPlay)
-            currentlyPlayingArtistNext.innerText = `${dataPlay.song[5].title}`
-            currentlyPlayingSongNext.innerText = `${dataPlay.song[5].artist}`
+            currentlyPlayingArtistNext.innerText = null
+                ? `${dataPlay.song[0].artist}`
+                : `${dataPlay.song[2].artist}`
+            currentlyPlayingSongNext.innerText = null
+                ? `${dataPlay.song[0].title}`
+                : `${dataPlay.song[2].title}`
         })
         .catch(err => console.error(err))
 
