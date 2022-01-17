@@ -60,6 +60,7 @@ const fetchCurrentlyPlaying = () =>
     )
         .then(response => response.json())
         .then(data => {
+            // console.log(data)
             //Station
             currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`
             //Song
@@ -69,8 +70,8 @@ const fetchCurrentlyPlaying = () =>
 
             currentlyPlayingSong.innerText = `NEXT SONG LOADING`
             currentlyPlayingArtist.innerText = `DJ TALKING`
-            currentlyPlayingArtistNext.innerText = `ED SHEERAN`
-            currentlyPlayingSongNext.innerText = `BAD HABITS`
+            // currentlyPlayingArtistNext.innerText = `ED SHEERAN`
+            // currentlyPlayingSongNext.innerText = `BAD HABITS`
 
             currentlyPlayingSong.innerText =
                 `${data.playlist.song.title}`
@@ -81,10 +82,22 @@ const fetchCurrentlyPlaying = () =>
                     ? `${data.playlist.song.artist}`
                     : `${data.playlist.previoussong.artist}`
 
-            currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`
-            currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`
+            // currentlyPlayingArtistNext.innerText = `${data.playlist.nextsong.artist}`
+            // currentlyPlayingSongNext.innerText = `${data.playlist.nextsong.title}`
+        })
+        .catch(err => console.error(err))
 
-            // console.log(data);
+// `http://api.sr.se/api/v2/playlists/getplaylistbychannelid?id=164&format=json`
+
+const fetchCurrentlyPlayingPlaylist = () =>
+    fetch(
+        "http://api.sr.se/api/v2/playlists/getplaylistbychannelid?id=164&format=json",
+    )
+        .then(response => response.json())
+        .then(dataPlay => {
+            // console.log(dataPlay)
+            currentlyPlayingArtistNext.innerText = `${dataPlay.song[5].title}`
+            currentlyPlayingSongNext.innerText = `${dataPlay.song[5].artist}`
         })
         .catch(err => console.error(err))
 
@@ -119,7 +132,6 @@ navigator.geolocation.getCurrentPosition(position => {
             return res.json()
         })
         .then(data => {
-            console.log(data)
             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
             document.querySelector(".weather").innerHTML = `
 			<img class="weather__Icon" src=${iconUrl} />
@@ -147,12 +159,6 @@ async function getRadioData() {
     }
 }
 getRadioData()
-
-async function doSmtnWithJsonData() {
-    let quizData = await getRadioData()
-    console.log(quizData)
-}
-doSmtnWithJsonData()
 
 const adjustVolumeIcon = volume => {
     volumeButtonIcon.classList.remove("fa-volume-off")
@@ -223,7 +229,12 @@ playBtn.addEventListener("click", () => {
         audio.play()
         changeArtwork()
         fetchCurrentlyPlaying()
+        fetchCurrentlyPlayingPlaylist()
         fetchInterval = setInterval(fetchCurrentlyPlaying, 3000)
+        fetchInterval = setInterval(
+            fetchCurrentlyPlayingPlaylist,
+            3000,
+        )
     }
 
     isPlaying = !isPlaying
