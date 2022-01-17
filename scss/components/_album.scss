@@ -1,43 +1,45 @@
 #album-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  .dot {
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    border-radius: 50%;
-    background-color: var(--clr-greyLight-1);
-    z-index: 1;
-    box-shadow: var(--clr-text-inner-shadow);
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    .dot {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--clr-greyLight-1);
+        z-index: 1;
+        box-shadow: var(--clr-text-inner-shadow);
+    }
 }
 
 #album-container > img {
-  object-fit: cover;
-  height: 220px;
-  width: 220px;
-  animation: fadeIn 1s;
-  -webkit-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -o-animation: fadeIn 1s;
-  -ms-animation: fadeIn 1s;
-  border-radius: 50%;
-  background-size: 100%;
-  background-image: no-repeat-y;
-  box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2), -0.2rem -0.2rem 0.5rem var(--clr-white);
-  animation: rotate 30s linear infinite;
+    object-fit: cover;
+    height: 220px;
+    width: 220px;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+    border-radius: 50%;
+    background-size: 100%;
+    background-image: no-repeat-y;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2),
+        -0.2rem -0.2rem 0.5rem var(--clr-white);
+    animation: rotate 30s linear infinite;
 }
 
 .album__holder {
-  object-fit: cover;
-  height: 220px;
-  width: 220px;
-  border-radius: 50%;
-  border-radius: 50%;
-  background-image: url("../assets/images/albumCover.jpg");
-  background-size: 100%;
-  background-image: no-repeat-y;
-  box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2), -0.2rem -0.2rem 0.5rem var(--clr-white);
+    object-fit: cover;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    border-radius: 50%;
+    background-image: url("../assets/images/albumCover.jpg");
+    background-size: 100%;
+    background-image: no-repeat-y;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--clr-greyLight-2),
+        -0.2rem -0.2rem 0.5rem var(--clr-white);
 }
