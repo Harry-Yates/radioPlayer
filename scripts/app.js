@@ -99,7 +99,7 @@ var artworkTimer = function () {
     } else {
         setInterval(function () {
             changeArtwork()
-        }, 900000)
+        }, 90000)
     }
 }
 
