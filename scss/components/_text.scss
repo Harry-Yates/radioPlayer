@@ -1,60 +1,60 @@
 .songDetails,
 .currently-playing {
-  display: flex;
-  flex-direction: row;
-  text-transform: uppercase;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .songDetails {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .currently-playing-artist-next,
 .currently-playing-artist-previous,
 .currently-playing-song-next,
 .currently-playing-song-previous {
-  margin-top: 0.9rem;
-  padding: 0.7rem;
-  font-size: 0.5rem;
-  margin: 1rem;
-  max-width: 70px;
-  min-width: 70px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  box-shadow: var(--clr-text-inner-shadow);
-  border-radius: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+    margin-top: 0.9rem;
+    padding: 0.55rem;
+    font-size: 0.5rem;
+    margin: 1rem;
+    max-width: 70px;
+    min-width: 70px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: var(--clr-text-inner-shadow);
+    border-radius: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .currently-playing-label,
 .currently-playing-artist {
-  margin-top: 0.9rem;
+    margin-top: 0.9rem;
 }
 
 .currently-playing-label {
-  font-weight: var(--fw-heavy);
+    font-weight: var(--fw-heavy);
 }
 
 .currently-playing-artist,
 .currently-playing-song {
-  padding: 1rem;
-  font-size: var(--fs-medium);
-  margin-bottom: 1rem;
-  box-shadow: var(--clr-text-inner-shadow);
-  border: 1px solid var(--clr-primary);
-  border-radius: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 210px;
+    padding: 1rem;
+    font-size: var(--fs-medium);
+    margin-bottom: 1rem;
+    box-shadow: var(--clr-text-inner-shadow);
+    border: 1px solid var(--clr-primary);
+    border-radius: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 210px;
 }
 
 .currently-playing-song,
 .currently-playing-artist {
-  letter-spacing: 1px;
-  font-weight: var(--fw-bolder);
+    letter-spacing: 1px;
+    font-weight: var(--fw-bolder);
 }
