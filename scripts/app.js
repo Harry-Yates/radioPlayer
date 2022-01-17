@@ -61,6 +61,7 @@ const fetchCurrentlyPlaying = () =>
         .then(response => response.json())
         .then(data => {
             // console.log(data)
+
             //Station
             currentlyPlayingLabel.innerText = `${data.playlist.channel.name}`
             //Song
@@ -70,6 +71,7 @@ const fetchCurrentlyPlaying = () =>
 
             currentlyPlayingArtist.innerText = `DJ TALKING`
             currentlyPlayingSong.innerText = `DJ TALKING`
+
             // currentlyPlayingArtistNext.innerText = `ED SHEERAN`
             // currentlyPlayingSongNext.innerText = `BAD HABITS`
 
@@ -88,6 +90,24 @@ const fetchCurrentlyPlaying = () =>
         .catch(err => console.error(err))
 
 // `http://api.sr.se/api/v2/playlists/getplaylistbychannelid?id=164&format=json`
+
+var artworkTimer = function () {
+    if (
+        currentlyPlayingArtistNext.innerText !==
+        currentlyPlayingArtistNext.innerText
+    ) {
+        changeArtwork()
+    }
+    if (currentlyPlayingArtist.innerText === `DJ TALKING`) {
+        document.getElementById("album-container").innerHTML = `
+      <img  src="./assets/images/p3.png") />
+      <div class="dot"></div>`
+    }
+}
+
+setInterval(function () {
+    artworkTimer()
+}, 90000)
 
 const fetchCurrentlyPlayingPlaylist = () =>
     fetch(
@@ -142,9 +162,9 @@ navigator.geolocation.getCurrentPosition(position => {
         .catch(err => console.error(err))
 })
 
-setInterval(function () {
-    changeArtwork()
-}, 45000)
+// setInterval(function () {
+//     changeArtwork()
+// }, 45000)
 
 async function getRadioData() {
     try {
@@ -213,7 +233,7 @@ playBtn.addEventListener("click", () => {
     if (isPlaying) {
         audio.pause()
         document.getElementById("album-container").innerHTML = `
-    <img style=" animation-play-state: paused;" src="./assets/images/album.jpg")>
+    <img style=" animation-play-state: paused;" src="./assets/images/album.jpg" />
     <div class="dot"></div>
     `
 
