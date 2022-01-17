@@ -68,8 +68,8 @@ const fetchCurrentlyPlaying = () =>
             //Artist
             currentlyPlayingArtistPrevious.innerText = `${data.playlist.previoussong.artist}`
 
-            currentlyPlayingSong.innerText = `NEXT SONG LOADING`
             currentlyPlayingArtist.innerText = `DJ TALKING`
+            currentlyPlayingSong.innerText = `DJ TALKING`
             // currentlyPlayingArtistNext.innerText = `ED SHEERAN`
             // currentlyPlayingSongNext.innerText = `BAD HABITS`
 
