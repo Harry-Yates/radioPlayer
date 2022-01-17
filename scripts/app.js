@@ -91,7 +91,7 @@ const fetchCurrentlyPlaying = () =>
 
 const fetchCurrentlyPlayingPlaylist = () =>
     fetch(
-        "http://api.sr.se/api/v2/playlists/getplaylistbychannelid?id=164&format=json",
+        "https://api.sr.se/api/v2/playlists/getplaylistbychannelid?id=164&format=json",
     )
         .then(response => response.json())
         .then(dataPlay => {
