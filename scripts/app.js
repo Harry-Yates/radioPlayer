@@ -217,7 +217,8 @@ playBtn.addEventListener("click", () => {
     <div class="dot"></div>
     `
 
-        clearInterval(fetchInterval)
+        clearInterval(fetchCurrentlyPlayingInterval)
+        clearInterval(fetchCurrentlyPlayingPlaylistInterval)
         currentlyPlayingLabel.innerText = "RADIO STATION"
         currentlyPlayingSong.innerText = "PLAY"
         currentlyPlayingArtist.innerText = "Artist"
@@ -230,8 +231,11 @@ playBtn.addEventListener("click", () => {
         changeArtwork()
         fetchCurrentlyPlaying()
         fetchCurrentlyPlayingPlaylist()
-        fetchInterval = setInterval(fetchCurrentlyPlaying, 3000)
-        fetchInterval = setInterval(
+        fetchCurrentlyPlayingInterval = setInterval(
+            fetchCurrentlyPlaying,
+            3000,
+        )
+        fetchCurrentlyPlayingPlaylistInterval = setInterval(
             fetchCurrentlyPlayingPlaylist,
             3000,
         )
