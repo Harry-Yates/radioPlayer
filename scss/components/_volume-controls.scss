@@ -64,7 +64,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 0.8rem;
     overflow: visible;
     cursor: pointer;
-    background: var(--clr-white);
+    background: #fff;
     box-shadow: -400px 0 0 390px var(--clr-primary);
     border-radius: 50%;
 }
